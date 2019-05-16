@@ -6,6 +6,12 @@ class ContactsController < ApplicationController
     @contacts = Contact.all
 
     render json: @contacts
+
+    # Traz a raiz do elemento Contact
+    # render json: @contacts, root: true
+
+    # Traz apenas os elementos específicos
+    # render json: @contacts, only: [:name, :email]
   end
 
   # GET /contacts/1
