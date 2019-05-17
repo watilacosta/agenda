@@ -1,11 +1,11 @@
 class Contact < ApplicationRecord
-
-  def say_hello
-    "Hello, I'm #{name}"
-  end
+  belongs_to :kind
 
   # Sobreescrevendo o método
   def as_json(options={})
-    super(methods: :say_hello, root: true)
+    super(
+      # root: true,
+      include: {kind: {only: :description } }
+    )
   end
 end
