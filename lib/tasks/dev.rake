@@ -16,7 +16,7 @@ namespace :dev do
         name:      Faker::Name.name,
         email:     Faker::Internet.email,
         birthdate: Faker::Date.between(35.years.ago, 18.years.ago),
-        kind: Kind.all.sample
+        kind:      Kind.all.sample
       )
       puts "#{Contact.all.count} contatos criados!"
     end
@@ -28,6 +28,15 @@ namespace :dev do
         c.phones << phone
         c.save!
       end
+    end
+
+    # criando address
+    Contact.all.each do |c|
+      Address.create!(
+        street:  Faker::Address.street_name,
+        city:    Faker::Address.city,
+        contact: c
+      )
     end
   end
 
