@@ -18,6 +18,7 @@ namespace :dev do
         birthdate: Faker::Date.between(35.years.ago, 18.years.ago),
         kind: Kind.all.sample
       )
+      puts "#{Contact.all.count} contatos criados!"
     end
 
     # criando phones
