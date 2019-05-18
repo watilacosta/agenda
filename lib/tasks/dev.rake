@@ -19,6 +19,15 @@ namespace :dev do
         kind: Kind.all.sample
       )
     end
+
+    # criando phones
+    Contact.all.each do |c|
+      Random.rand(5).times do |t|
+        phone = Phone.create!(number: Faker::PhoneNumber.cell_phone)
+        c.phones << phone
+        c.save!
+      end
+    end
   end
 
 end

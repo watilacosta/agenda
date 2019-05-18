@@ -1,5 +1,6 @@
 class Contact < ApplicationRecord
   belongs_to :kind
+  has_many :phones
 
   # def kind_description
   #   kind.description
@@ -13,4 +14,13 @@ class Contact < ApplicationRecord
   #     include: {kind: {only: :description } }
   #   )
   # end
+
+  def to_br
+    { 
+      name: name,
+      email: email,
+      birthdate: (I18n.l(birthdate) if birthdate.present?),
+      kind_id: kind_id
+    }
+  end
 end

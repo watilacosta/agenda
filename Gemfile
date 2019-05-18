@@ -38,6 +38,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  
+  # Debug code 
+  gem 'pry', '~> 0.12.2'
 end
 
 
@@ -47,4 +50,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # A library for generating fake data
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+# Controla origens permitidas para as requisições
 gem 'rack-cors'
+
+# Tradução
+gem 'rails-i18n', '~> 5.1'
