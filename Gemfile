@@ -54,3 +54,6 @@ gem 'rack-cors'
 
 # Tradução
 gem 'rails-i18n', '~> 5.1'
+
+# Serializador
+gem 'active_model_serializers', '~> 0.10.2'
