@@ -20,7 +20,7 @@ class Contact < ApplicationRecord
   # end
 
   # def to_br
-  #   { 
+  #   {
   #     name: name,
   #     email: email,
   #     birthdate: (I18n.l(birthdate) if birthdate.present?),
@@ -29,8 +29,8 @@ class Contact < ApplicationRecord
   # end
 
   def as_json(options = {})
-    h = super(options)
-    h[:birthdate] = (I18n.l(birthdate) if birthdate.present?)
-    h
+    hash = super(options)
+    hash[:birthdate] = (I18n.l(birthdate) if birthdate.present?)
+    hash
   end
 end
